@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c799c47c-d441-4fdd-8b73-bb47a451308e" name="Default Changelist" comment="test">
+    <list default="true" id="c799c47c-d441-4fdd-8b73-bb47a451308e" name="Default Changelist" comment="1st draft">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Untitled.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/dash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/github.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/overview.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/overview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +46,23 @@
       </map>
     </option>
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="master" />
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="ktheoxaroulis" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="int_dashboard" />
   </component>
   <component name="JupyterTrust" id="f4fe7b6f-41aa-4d95-84ce-d93c5229ff58" />
   <component name="ProjectId" id="1hSOdkEzOxVGdX30sRg8lT3tNtF" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,23 +71,23 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="Jupyter Settings" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="int_dashboard" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\user\AppData\Local\Programs\Python\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
       <option name="PARAMETERS" value="" />
@@ -64,9 +98,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\user\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.db" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.db" />
       </list>
     </recent_temporary>
   </component>
@@ -78,7 +139,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600001116184</updated>
-      <workItem from="1600001117469" duration="8634000" />
+      <workItem from="1600001117469" duration="10057000" />
+      <workItem from="1600800275694" duration="14798000" />
+      <workItem from="1600882873070" duration="13879000" />
+      <workItem from="1600965503023" duration="31000" />
+      <workItem from="1600966505758" duration="40081000" />
+      <workItem from="1601195075340" duration="9374000" />
+      <workItem from="1601373993735" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1600001668218</created>
@@ -94,7 +161,70 @@
       <option name="project" value="LOCAL" />
       <updated>1600010859271</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test">
+      <created>1600017465595</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600017465595</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test">
+      <created>1600017778411</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600017778411</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1st draft">
+      <created>1601203588800</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601203588800</updated>
+    </task>
+    <task id="LOCAL-00006" summary="1st draft">
+      <created>1601205378708</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601205378708</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1st draft">
+      <created>1601205741713</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601205741713</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1st draft">
+      <created>1601207182403</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601207182403</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1st draft">
+      <created>1601207195437</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601207195437</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1st draft">
+      <created>1601373676747</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601373676747</updated>
+    </task>
+    <task id="LOCAL-00011" summary="1st draft">
+      <created>1601373774798</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601373774798</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,58 +240,89 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="1st draft" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st draft" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="0" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600010840585">
+    <state x="421" y="192" key="#Notifications" timestamp="1601198304352">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="137" y="0" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1600010840585" />
+    <state x="421" y="192" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1601198304352" />
+    <state x="137" y="0" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600884086180">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="0" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1600884086180" />
     <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1600017236528">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1600017236528" />
-    <state x="129" y="55" key="DiffContextDialog" timestamp="1600017235089">
+    <state x="129" y="55" key="DiffContextDialog" timestamp="1601206308935">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="129" y="55" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1600017235089" />
-    <state width="1322" height="177" key="GridCell.Tab.0.bottom" timestamp="1600017111163">
+    <state x="129" y="55" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1601206308935" />
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1600965275546">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="177" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1600017111163" />
-    <state width="1322" height="177" key="GridCell.Tab.0.center" timestamp="1600017111163">
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1600965275546" />
+    <state x="452" y="235" key="Github.CreatePullRequestDialog" timestamp="1601373960751">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="177" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1600017111163" />
-    <state width="1322" height="177" key="GridCell.Tab.0.left" timestamp="1600017111162">
+    <state x="452" y="235" key="Github.CreatePullRequestDialog/0.0.1366.738@0.0.1366.738" timestamp="1601373960751" />
+    <state width="1012" height="249" key="GridCell.Tab.0.bottom" timestamp="1601376652336">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="177" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1600017111162" />
-    <state width="1322" height="177" key="GridCell.Tab.0.right" timestamp="1600017111163">
+    <state width="1012" height="249" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1601376652336" />
+    <state width="1012" height="249" key="GridCell.Tab.0.center" timestamp="1601376652335">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="177" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1600017111163" />
-    <state x="458" y="70" key="RollbackChangesDialog" timestamp="1600017265036">
+    <state width="1012" height="249" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1601376652335" />
+    <state width="1012" height="249" key="GridCell.Tab.0.left" timestamp="1601376652335">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="458" y="70" key="RollbackChangesDialog/0.0.1366.738@0.0.1366.738" timestamp="1600017265036" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1600009618863">
+    <state width="1012" height="249" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1601376652335" />
+    <state width="1012" height="249" key="GridCell.Tab.0.right" timestamp="1601376652336">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1600009618863" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1600017214233">
+    <state width="1012" height="249" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1601376652336" />
+    <state x="263" y="103" key="IDE.errors.dialog" timestamp="1601374008176">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1600017214233" />
-    <state x="500" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600017206990">
+    <state x="263" y="103" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1601374008176" />
+    <state x="321" y="129" key="MultipleFileMergeDialog" timestamp="1601373742722">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="500" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1600017206990" />
+    <state x="321" y="129" key="MultipleFileMergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1601373742722" />
+    <state x="458" y="70" key="RollbackChangesDialog" timestamp="1601205353732">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="458" y="70" key="RollbackChangesDialog/0.0.1366.738@0.0.1366.738" timestamp="1601205353732" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1600965536776">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1600965536776" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1601373779732">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1601373779732" />
+    <state x="500" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601205359966">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="500" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1601205359966" />
+    <state x="390" y="102" width="585" height="534" key="find.popup" timestamp="1600813118826">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="390" y="102" width="585" height="534" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1600813118826" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601198319851">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601198319851" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/int_dashboard$app.coverage" NAME="app Coverage Results" MODIFIED="1600016037416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/int_dashboard$db.coverage" NAME="db Coverage Results" MODIFIED="1601110472396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/int_dashboard$app.coverage" NAME="app Coverage Results" MODIFIED="1601376652297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

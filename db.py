@@ -34,9 +34,8 @@ def return_sales():
 def return_quantity():
     return  df_finalorders.groupby(['Store','OrderDate']).agg(quantity = ('Quantity','sum') ).reset_index()
 
-
-
 today = datetime.strptime(max(df_finalorders['OrderDate']), '%Y-%m-%d')
+cyear, cweek, ctoday = today.isocalendar()
 startweeks =(today - timedelta(days=today.weekday())).strftime('%Y-%m-%d')
 endweeks = ((today - timedelta(days=today.weekday())) + timedelta(days=6)).strftime('%Y-%m-%d')
 
@@ -62,8 +61,26 @@ def return_meltdf(store_statues):
     df['Avg Sales per Order'] = df.Sales / df.Orders
     df['Avg Item per Order'] = df.Quantity / df.Orders
     df['Avg Sales per Item'] = df.Sales / df.Quantity
+    df['Year'] = df['Year'].astype(str)
     return df.melt(["WeekofYear","Year"])
 
 
+def return_meltdfdow(store_statues,weekofyear):
+    df=df_finalorders[(df_finalorders["Store"].isin(store_statues)) & (df_finalorders["WeekofYear"] == weekofyear)].groupby(["DayofWeek","Year"] ).agg(Sales = ('AfterOrderDiscountValue','sum'), Orders = ('Orders','sum'),Quantity = ('Quantity','sum') ).reset_index()
+    df['Avg Sales per Order'] = df.Sales / df.Orders
+    df['Avg Item per Order'] = df.Quantity / df.Orders
+    df['Avg Sales per Item'] = df.Quantity / df.Orders
+    df['Year'] = df['Year'].astype(str)
+    df=df.sort_values(by=['Year', 'DayofWeek']).reset_index(drop=True).replace({'DayofWeek': {0: 'Δευ', 1: 'Τρι', 2: 'Τετ', 3: 'Πεμ', 4: 'Παρ', 5: 'Σαβ', 6: 'Κυρ' }})
+    return df.melt(["DayofWeek","Year"])
 
+
+def return_meltd(store_statues,weekofyear):
+    df = df_finalorders[(df_finalorders["Store"].isin(store_statues)) & (df_finalorders["WeekofYear"] == weekofyear)].groupby(["DayofWeek", "Year", "OrderId"]).agg(
+        business=("BusinessMeals", lambda x: (x == True).any()), temperature=('Μέση Θερμοκρασία Ημέρας', 'min')).reset_index()
+    df2 = df.groupby(["DayofWeek", "Year"]).agg(business=("business", lambda x: (x == True).sum()), temperature=("temperature", "min")).reset_index()
+    df2['Year'] = df2['Year'].astype(str)
+    df2=df2.sort_values(by=['Year', 'DayofWeek']).reset_index(drop=True).replace({'DayofWeek': {0: 'Δευ', 1: 'Τρι', 2: 'Τετ', 3: 'Πεμ', 4: 'Παρ', 5: 'Σαβ', 6: 'Κυρ' }})
+
+    return df2.melt(["DayofWeek","Year"])
 

@@ -279,8 +279,8 @@ def update_saleslyear(store_statues):
      Input("store_statues", "value"),
      ])
 def update_y_timeseries(xaxis_column_name,store_statues):
-    df = db.return_meltdf(store_statues)
-    fig = px.line(df[df['variable'] == xaxis_column_name], x='WeekofYear', y='value', color='Year',line_group='Year')
+    df = db.return_meltdf(store_statues).sort_values(by=[ 'Year','WeekofYear'])
+    fig = px.line(df[df['variable'] == xaxis_column_name], x='WeekofYear', y='value', color='Year',line_group='Year' )
     fig.update_traces(mode='lines+markers')
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(type='linear')
@@ -288,8 +288,53 @@ def update_y_timeseries(xaxis_column_name,store_statues):
                        xref='paper', yref='paper', showarrow=False, align='left',
                        bgcolor='rgba(255, 255, 255, 0.5)', text="title")
     fig.update_layout(height=500, margin={'l': 20, 'b': 30, 'r': 10, 't': 10})
+    fig.update_layout(clickmode='event+select')
     return fig
 
+
+@app.callback(
+    Output('individual_graph1', 'figure'),
+    [Input('main_graph', 'hoverData'),
+     Input('crossfilter-xaxis-column', 'value'),
+     Input("store_statues", "value"),
+     ])
+def update_timeseries(hoverData, xaxis_column_name,store_statues):
+    if hoverData is None:
+        df = db.return_meltdfdow(store_statues,db.cweek)
+    else:
+        df = db.return_meltdfdow(store_statues, hoverData['points'][0]['x'])
+
+    fig = px.bar(df[df['variable'] == xaxis_column_name], x='DayofWeek', y='value',color='Year',barmode='group')
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(type='linear')
+    fig.add_annotation(x=0, y=0.85, xanchor='left', yanchor='bottom',
+                       xref='paper', yref='paper', showarrow=False, align='left',
+                       bgcolor='rgba(255, 255, 255, 0.5)', text="title")
+    fig.update_layout(height=250, margin={'l': 20, 'b': 30, 'r': 10, 't': 10})
+    fig.update_layout(clickmode='event+select')
+    return fig
+
+@app.callback(
+    Output('individual_graph2', 'figure'),
+    [Input('main_graph', 'hoverData'),
+     Input('crossfilter-yaxis-column', 'value'),
+     Input("store_statues", "value"),
+     ])
+def update_timeseries(hoverData, yaxis_column_name,store_statues):
+    if hoverData is None:
+        df = db.return_meltd(store_statues,db.cweek)
+    else:
+        df = db.return_meltd(store_statues, hoverData['points'][0]['x'])
+
+    fig = px.bar(df[df['variable'] == yaxis_column_name], x='DayofWeek', y='value',color='Year',barmode='group')
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(type='linear')
+    fig.add_annotation(x=0, y=0.85, xanchor='left', yanchor='bottom',
+                       xref='paper', yref='paper', showarrow=False, align='left',
+                       bgcolor='rgba(255, 255, 255, 0.5)', text="title")
+    fig.update_layout(height=250, margin={'l': 20, 'b': 30, 'r': 10, 't': 10})
+    fig.update_layout(clickmode='event+select')
+    return fig
 
 
 if __name__ == "__main__":

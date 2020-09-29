@@ -132,12 +132,20 @@ def create_layout(app):
                     ),
                     html.Div(
                         [dcc.Graph(id="individual_graph1"),
+                         dcc.Dropdown(
+                             id='crossfilter-yaxis-column',
+                             options=[{'label': i, 'value': i} for i in
+                                      ['temperature', 'business']],
+                             value='business'
+                         ),
                          dcc.Graph(id="individual_graph2")],
                         className="pretty_container five columns",
                     ),
                 ],
                 className="row flex-display",
             ),
+
+
             html.Div([Footer(app)]),
 
         ],
