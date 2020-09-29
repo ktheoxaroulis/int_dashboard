@@ -280,13 +280,14 @@ def update_saleslyear(store_statues):
      ])
 def update_y_timeseries(xaxis_column_name,store_statues):
     df = db.return_meltdf(store_statues).sort_values(by=[ 'Year','WeekofYear'])
-    fig = px.line(df[df['variable'] == xaxis_column_name], x='WeekofYear', y='value', color='Year',line_group='Year' )
+    fig = px.line(df[df['variable'] == xaxis_column_name], x='WeekofYear', y='value', color='Year',line_group='Year' ,\
+                 labels=dict(WeekofYear="Weeks of Year", value=xaxis_column_name, Year="Year"))
     fig.update_traces(mode='lines+markers')
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(type='linear')
     fig.add_annotation(x=0, y=0.85, xanchor='left', yanchor='bottom',
                        xref='paper', yref='paper', showarrow=False, align='left',
-                       bgcolor='rgba(255, 255, 255, 0.5)', text="title")
+                       bgcolor='rgba(255, 255, 255, 0.5)')
     fig.update_layout(height=500, margin={'l': 20, 'b': 30, 'r': 10, 't': 10})
     fig.update_layout(clickmode='event+select')
     return fig
@@ -294,44 +295,49 @@ def update_y_timeseries(xaxis_column_name,store_statues):
 
 @app.callback(
     Output('individual_graph1', 'figure'),
-    [Input('main_graph', 'hoverData'),
+    [Input('main_graph', 'clickData'),
      Input('crossfilter-xaxis-column', 'value'),
      Input("store_statues", "value"),
      ])
-def update_timeseries(hoverData, xaxis_column_name,store_statues):
-    if hoverData is None:
-        df = db.return_meltdfdow(store_statues,db.cweek)
+def update_timeseries(clickData, xaxis_column_name,store_statues):
+    if clickData is None:
+        wk=db.cweek
     else:
-        df = db.return_meltdfdow(store_statues, hoverData['points'][0]['x'])
+        wk = clickData['points'][0]['x']
 
-    fig = px.bar(df[df['variable'] == xaxis_column_name], x='DayofWeek', y='value',color='Year',barmode='group')
+    df = db.return_meltdfdow(store_statues,wk)
+    fig = px.bar(df[df['variable'] == xaxis_column_name], x='DayofWeek', y='value',color='Year',barmode='group',\
+                 labels=dict(DayofWeek="Week: "+ str(wk), value=xaxis_column_name, Year="Year"))
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(type='linear')
     fig.add_annotation(x=0, y=0.85, xanchor='left', yanchor='bottom',
                        xref='paper', yref='paper', showarrow=False, align='left',
-                       bgcolor='rgba(255, 255, 255, 0.5)', text="title")
+                       bgcolor='rgba(255, 255, 255, 0.5)')
     fig.update_layout(height=250, margin={'l': 20, 'b': 30, 'r': 10, 't': 10})
     fig.update_layout(clickmode='event+select')
     return fig
 
 @app.callback(
     Output('individual_graph2', 'figure'),
-    [Input('main_graph', 'hoverData'),
+    [Input('main_graph', 'clickData'),
      Input('crossfilter-yaxis-column', 'value'),
      Input("store_statues", "value"),
      ])
-def update_timeseries(hoverData, yaxis_column_name,store_statues):
-    if hoverData is None:
-        df = db.return_meltd(store_statues,db.cweek)
+def update_timeseries(clickData, yaxis_column_name,store_statues):
+    if clickData is None:
+        wk = db.cweek
     else:
-        df = db.return_meltd(store_statues, hoverData['points'][0]['x'])
+        wk = clickData['points'][0]['x']
+    df = db.return_meltd(store_statues,wk)
 
-    fig = px.bar(df[df['variable'] == yaxis_column_name], x='DayofWeek', y='value',color='Year',barmode='group')
+    fig = px.bar(df[df['variable'] == yaxis_column_name], x='DayofWeek', y='value',color='Year',barmode='group' ,\
+                 labels=dict(DayofWeek="Week: "+ str(wk), value=yaxis_column_name, Year="Year")
+)
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(type='linear')
     fig.add_annotation(x=0, y=0.85, xanchor='left', yanchor='bottom',
                        xref='paper', yref='paper', showarrow=False, align='left',
-                       bgcolor='rgba(255, 255, 255, 0.5)', text="title")
+                       bgcolor='rgba(255, 255, 255, 0.5)')
     fig.update_layout(height=250, margin={'l': 20, 'b': 30, 'r': 10, 't': 10})
     fig.update_layout(clickmode='event+select')
     return fig
